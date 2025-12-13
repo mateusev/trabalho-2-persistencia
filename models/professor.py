@@ -1,6 +1,9 @@
+from typing import TYPE_CHECKING
 from sqlmodel import SQLModel, Field, Relationship
-from .departamento import Departamento
-from .disciplina import Disciplina
+
+if TYPE_CHECKING:
+    from .departamento import Departamento
+    from .disciplina import Disciplina
 
 class Professor(SQLModel, table=True):
     id: int | None = Field(default=None, primary_key=True)
