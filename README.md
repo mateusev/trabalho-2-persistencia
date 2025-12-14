@@ -1,3 +1,6 @@
+# Sistema de Gestão Acadêmica 
+## Diagram de Classes UML
+
 ```mermaid
 classDiagram
     direction LR
