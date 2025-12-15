@@ -1,5 +1,5 @@
 # Sistema de Gestão Acadêmica 
-## Diagram de Classes UML
+## Diagrama de Classes UML
 
 ```mermaid
 classDiagram

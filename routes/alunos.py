@@ -57,8 +57,7 @@ def read_alunos(
     #  Filtro por Ano (Extraindo ano da data de nascimento)
     if ano_nascimento:
         # strftime funciona bem no SQLite para extrair o ano
-        statement = statement.where(func.strftime('%Y', Aluno.data_nascimento) == str(ano_nascimento))
-
+        statement = statement.where(func.extract('year', Aluno.data_nascimento) == ano_nascimento)
     #  Ordenação
     if ordenar_por_nome:
         statement = statement.order_by(Aluno.nome)
@@ -129,7 +128,7 @@ def get_alunos_por_disciplina(disciplina_id: int, session: Session = Depends(get
         select(Aluno)
         .join(Matricula)  # Join explícito na tabela de associação
         .where(Matricula.disciplina_id == disciplina_id)
-        .options(selectinload(Aluno.disciplinas))  # Opcional: Carregar outras matérias que ele faz
+        .options(selectinload(Aluno.disciplinas))
     )
 
     return session.exec(statement).unique().all()
