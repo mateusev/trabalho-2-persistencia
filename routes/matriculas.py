@@ -40,10 +40,10 @@ def create_matricula(matricula: Matricula, session: Session = Depends(get_sessio
 def list_matriculas(
         offset: int = 0,
         limit: int = Query(default=10, le=100),
-        semestre: str | None = Query(None, description="Filtrar por semestre (ex: 2025.1)"),
-        nota_minima: float | None = Query(None, description="Filtrar por nota maior ou igual a X (Aprovados)"),
+        semestre: str | None = Query(None, description="Filtrar por semestre (ex: 25.1)"),
+        nota_minima: float | None = Query(None, description="Filtrar por nota maior ou igual a X"),
         id_aluno: int | None = Query(None, description="Ver histórico de um aluno"),
-        disciplina_id: int | None = Query(None, description="Ver pauta de uma disciplina"),
+        disciplina_id: int | None = Query(None, description="Ver info de uma disciplina"),
         session: Session = Depends(get_session)
 ):
     statement = select(Matricula).options(
