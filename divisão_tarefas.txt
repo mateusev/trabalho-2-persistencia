@@ -1,0 +1,11 @@
+Mateus Evangelista de Sousa
+    1 - Criação das classes correspondentes às entidades;
+    2 - Configuração do Postgress na nuvem do Supabase;
+    3 - Configuração do Alembic
+    4 - Criação de consultas.
+
+Wellington Santos Rodrigues
+    1 - Modelagem do sistema com o Mermaid;
+    2 - Criação dos endpoints;
+    3 - População do banco de dados;
+    4 - Criação das consultas.
