@@ -14,5 +14,5 @@ class Matricula(MatriculaBase, table=True):
     id_aluno: int | None = Field(default=None, foreign_key="aluno.id", primary_key=True)
     disciplina_id: int | None = Field(default=None, foreign_key="disciplina.id", primary_key=True)
 
-    aluno: "Aluno" = Relationship(back_populates="matriculas_disciplinas")
+    aluno: "Aluno" = Relationship(back_populates="matriculas_detalhes")
     disciplina: "Disciplina" = Relationship(back_populates="matriculas")
